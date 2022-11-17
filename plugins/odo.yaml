@@ -27,3 +27,13 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
+  description: |
+      Show an access matrix for server resources
+      This plugin retrieves the full list of server resources, checks access for
+      the current user with the given verbs, and prints the result as a matrix.
+      This complements the usual "kubectl auth can-i" command, which works for
+      a single resource and a single verb. For example:
+       $ kubectl access-matrix
+      It also supports a mode which prints all subjects with access to a given
+      resource (needs read access to Roles and ClusterRoles). For example:
+       $ kubectl access-matrix for configmap
