@@ -1,0 +1,29 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: odo
+spec:
+  version: v4
+  platforms:
+  - bin: odo-linux-amd64
+    uri: https://developers.redhat.com/content-gateway/rest/mirror/pub/openshift-v4/clients/odo/latest/odo-linux-amd64.tar.gz
+    files:
+      - from: LICENSE
+        to: .
+      - from: odo-linux-amd64
+        to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - bin: odo-darwin-amd64
+    uri: https://developers.redhat.com/content-gateway/rest/mirror/pub/openshift-v4/clients/odo/latest/odo-darwin-amd64.tar.gz
+    files:
+      - from: LICENSE
+        to: .
+      - from: odo-darwin-amd64
+        to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
